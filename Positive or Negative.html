@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>2.Positive or Negative</title>
+</head>
+<body align="center">
+    <h1>Positive OR Negative</h1>
+    Enter the number : <input type="text" id="vote"><br><br>
+    <button onclick="pon()">Check</button>
+</body>
+<script>
+    function pon()
+    {
+        var x
+        x = parseInt(document.getElementById("vote").value)
+        if (x>0)
+        {
+            window.alert(+x+" is a Positive Number")
+        }
+        else if (x==0)
+        {
+            window.alert(+x+" is neither negative nor positive")
+        } 
+        else 
+        {
+            window.alert(+x+" is a Negative Number")
+        }
+    }
+</script>
+</html>

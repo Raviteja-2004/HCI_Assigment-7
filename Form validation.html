@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title>11.Form Validation</title>
+</head>
+<body>
+        <h1>Form Validation</h1>
+        <form id="myForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username"><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"><br><br>
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword"><br><br>
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="text" id="phoneNumber" name="phoneNumber"><br><br>
+            <label for="pinCode">Pin Code:</label>
+            <input type="text" id="pinCode" name="pinCode"><br><br>
+            <button type="button" onclick="validateForm()">Submit</button>
+        </form>
+        <h3 id="validationResult"></h3>
+    <script>
+        function validateForm()
+         {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirmPassword').value;
+            var phoneNumber = document.getElementById('phoneNumber').value;
+            var pinCode = document.getElementById('pinCode').value;
+            var validationResult = "";
+            if (username.length < 8) 
+            {
+                validationResult += "Username should be at least 8 characters.\n";
+            }
+            if (password.length < 8) 
+            {
+                validationResult += "\nPassword should be at least 8 characters.";
+            }
+            if (password !== confirmPassword) 
+            {
+                validationResult += "\nPasswords do not match.";
+            }
+            if (phoneNumber.length < 10) 
+            {
+                validationResult += "\nPhone number should be at most 10 digits.";
+            }
+            if (pinCode.length < 6) 
+            {
+                validationResult += "\nPin code should be at most 6 digits.";
+            }
+            if (validationResult === "") 
+            {
+                validationResult = "Form is valid. Submission successful.";
+            }
+            document.getElementById('validationResult').textContent = validationResult;
+        }
+    </script>
+</body>
+</html>

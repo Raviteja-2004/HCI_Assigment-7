@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>9.Display Array Elements</title>
+</head>
+<body>
+    <center>
+        <h1>Display Array Elements</h1>
+        <button type="button" onclick="displayArray()">Display Array</button>
+        <h3 id="result"></h3>
+    </center>
+    <script>
+        function displayArray() 
+        {
+            var numbers = [" HCI "," MPCA "," DS "," DMS "," HCI Lab "];
+            var displayString = "Array Elements Are: ";
+            for (var i = 0; i < numbers.length; i++) 
+            {
+                displayString += numbers[i];
+                if (i < numbers.length - 1) 
+                {
+                    displayString += ", ";
+                }
+            }
+            document.getElementById('result').textContent = displayString;
+        }
+    </script>
+</body>
+</html>
